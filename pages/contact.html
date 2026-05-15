@@ -55,18 +55,18 @@
         </div>
         <div class="bordure-bas"></div>
         <!-- Formulaire de contact -->
-        <form class="formulaire-reservation" action="" method="post">
+        <form class="formulaire-reservation" action="../donnees/receptionContact.php" method="post">
           <div class="partie-message-formulaire">
             <h2 class="titre-message-formulaire">Vos informations</h2>
 
             <div class="ligne-formulaire ligne-radio">
               <span class="libelle-radio">Vous etes :</span>
               <label for="type-client-particulier" class="radio-option">
-                <input type="radio" id="type-client-particulier" name="type-client" value="particulier" checked required>
+                <input type="radio" id="type-client-particulier" name="type-client" value="particulier" checked >
                 Particulier
               </label>
               <label for="type-client-professionnel" class="radio-option">
-                <input type="radio" id="type-client-professionnel" name="type-client" value="professionnel" required>
+                <input type="radio" id="type-client-professionnel" name="type-client" value="professionnel">
                 Professionnel
               </label>
             </div>
@@ -110,19 +110,19 @@
             <div class="ligne-formulaire grille-une-colonne">
               <div class="groupe-champ">
                 <label for="message-reservation">Message</label>
-                <textarea id="message-reservation" name="message-reservation" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions."></textarea>
+                <textarea id="message-reservation" name="message-reservation" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions." required></textarea>
               </div>
             </div>
 
             <div class="ligne-formulaire ligne-checkbox">
               <label for="acceptation-cgu" class="checkbox-option">
                 <input type="checkbox" id="acceptation-cgu" name="acceptation-cgu" required>
-                J'ai lu la politique des conditions generales d'utilisation.
+                J'ai lu et j'accepte la politique des conditions générales d'utilisation.
               </label>
             </div>
           </div>
 
-          <button class="btn-soumettre bouton-principal" type="submit">Réserver</button>
+          <button class="btn-soumettre bouton-principal" type="submit">Soumettre</button>
         </form>
       </div>
     </main>
