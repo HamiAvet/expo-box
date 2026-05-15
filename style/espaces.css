@@ -1,0 +1,338 @@
+body {
+    background: #f4f4f6;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Bordure verticale reutilisable */
+.bordure-droite {
+    position: relative;
+}
+
+.bordure-droite::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 60px;
+    transform: translateY(-50%);
+    background-color: #4791c8;
+}
+
+/* Bordure horizontale reutilisable */
+.bordure-bas {
+    position: relative;
+}
+
+.bordure-bas::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    transform: translateY(100%);
+    background-color: #4791c8;
+}
+
+/* 2) Boutons */
+.boutons-principaux {
+    display: flex;
+    gap: 40px;
+}
+
+.boutons-principaux button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 280px;
+    height: 60px;
+}
+
+.bouton-principal-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #0668C1;
+    color: #fff;
+}
+
+.bouton-principal-1:hover {
+    background-color: #1B67A3;
+}
+
+.bouton-principal-2 {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.bouton-principal-2:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Variantes conservees */
+.bouton-principal {
+    background-color: #0668C1;
+    color: #fff;
+}
+
+.bouton-principal:hover {
+    background-color: #1B67A3;
+}
+
+.bouton-principal p {
+    padding-top: 2px;
+    font-weight: 600;
+}
+
+.bouton-principal-secondaire {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.bouton-principal-secondaire:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bouton-principal-secondaire p {
+    padding-top: 2px;
+    font-weight: 600;
+}
+
+.bouton-secondaire {
+    width: 280px;
+    height: 50px;
+    background-color: transparent;
+    color: #0668C1;
+    border: 2px solid #0668C1;
+}
+
+.bouton-secondaire:hover {
+    color: #1B67A3;
+    border: 2px solid #1B67A3;
+}
+
+.bouton-liste {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #0668C1;
+    border: 2px solid #0668C1;
+}
+
+.bouton-grand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 28px;
+    background-color: #fff;
+    color: #0668C1;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.bouton-grand:hover {
+    background-color: #f5f5f7;
+}
+
+.bouton-grand p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bouton-grand img {
+    width: 32px;
+    height: 32px;
+}
+
+/* 3) Presentation */
+.presentation {
+    color: #fff;
+    padding: 170px 100px 80px 100px;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(244, 244, 246, 0) 0%,
+            rgba(244, 244, 246, 1) 100%
+        ),
+        linear-gradient(
+            90deg,
+            #14293b 0%,
+            rgba(20, 41, 59, 0.95) 25%,
+            rgba(20, 41, 59, 0.75) 45%,
+            rgba(20, 41, 59, 0.35) 70%,
+            rgba(20, 41, 59, 0) 100%
+        ),
+        url("../public/images/safim23-2607s006©yohanbrandt-1.jpg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom, top left, top center;
+    background-size: 100% 40px, cover, cover;
+}
+
+.sur-titre {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titre-principal {
+    width: 600px;
+    margin: 20px 0;
+    font-size: 42px;
+}
+
+.sous-titre {
+    width: 500px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Liste des espaces */
+
+.liste-espaces {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.espaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.espace {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.liste-img-espace {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+.liste-img-espace div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    margin-left: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.liste-img-espace div::-webkit-scrollbar {
+    display: none;
+}
+
+.img-espace {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    scroll-snap-align: start;
+    aspect-ratio: 16 / 9;   /* même ratio partout */
+    object-fit: cover;      /* pas déformé, recadrage propre */
+}
+
+.liste-img-espace .bouton-liste:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.description-espace {
+    width: 50%;
+    padding: 20px;
+}
+
+.titre-espace {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.caracteristiques-espace {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.caracteristique {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+}
+
+.caracteristique {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 220px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.texte-espace {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* 10) Reservation */
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 50px auto;
+    padding: 30px 0px;
+    background: #14293b;
+    border-radius: 20px;
+}
+
+.reservation-info {
+    display: flex;
+    gap: 40px;
+    width: 50%;
+}
+
+.texte-reservation h3 {
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #f5f5f7;
+}
+
+.texte-reservation p {
+    font-size: 18px;
+    color: #f5f5f7;
+}

@@ -1,0 +1,583 @@
+/* =====================================
+   Accueil - structure du fichier CSS
+   1) Base et utilitaires
+   2) Boutons
+   3) Presentation
+   4) A propos de nous
+   5) Nos espaces
+   6) Statistiques
+   7) Informations pratiques :
+      - Plan du parc
+      - Coordonnées
+      - Temoignages
+      - Sponsors
+   8) Reservation
+===================================== */
+
+/* 1) Base et utilitaires */
+body {
+    background: #f4f4f6;
+}
+
+button, a {
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Bordure verticale reutilisable */
+.bordure-droite {
+    position: relative;
+}
+
+.bordure-droite::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 60px;
+    transform: translateY(-50%);
+    background-color: #4791c8;
+}
+
+/* Bordure horizontale reutilisable */
+.bordure-bas {
+    position: relative;
+}
+
+.bordure-bas::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    transform: translateY(100%);
+    background-color: #4791c8;
+}
+
+/* 2) Boutons */
+.boutons-principaux {
+    display: flex;
+    gap: 40px;
+}
+
+.boutons-principaux button, .boutons-principaux a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 280px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.bouton-principal-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #0668C1;
+    color: #fff;
+}
+
+.bouton-principal-1:hover {
+    background-color: #1B67A3;
+}
+
+.bouton-principal-2 {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.bouton-principal-2:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Variantes conservees */
+.bouton-principal {
+    background-color: #0668C1;
+    color: #fff;
+}
+
+.bouton-principal:hover {
+    background-color: #1B67A3;
+}
+
+.bouton-principal p {
+    padding-top: 2px;
+    font-weight: 600;
+}
+
+.bouton-principal-secondaire {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.bouton-principal-secondaire:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bouton-principal-secondaire p {
+    padding-top: 2px;
+    font-weight: 600;
+}
+
+.bouton-secondaire {
+    width: 280px;
+    height: 50px;
+    background-color: transparent;
+    color: #0668C1;
+    border: 2px solid #0668C1;
+}
+
+.bouton-secondaire:hover {
+    color: #1B67A3;
+    border: 2px solid #1B67A3;
+}
+
+.bouton-liste {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: #0668C1;
+    border: 2px solid #0668C1;
+}
+
+.bouton-grand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 28px;
+    background-color: #fff;
+    color: #0668C1;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.bouton-grand:hover {
+    background-color: #f5f5f7;
+}
+
+.bouton-grand p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bouton-grand img {
+    width: 32px;
+    height: 32px;
+}
+
+/* 3) Presentation */
+.presentation {
+    color: #fff;
+    padding: 170px 100px 80px 100px;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(244, 244, 246, 0) 0%,
+            rgba(244, 244, 246, 1) 100%
+        ),
+        linear-gradient(
+            90deg,
+            #14293b 0%,
+            rgba(20, 41, 59, 0.95) 25%,
+            rgba(20, 41, 59, 0.75) 45%,
+            rgba(20, 41, 59, 0.35) 70%,
+            rgba(20, 41, 59, 0) 100%
+        ),
+        url("../public/images/safim23-2607s006©yohanbrandt-1.jpg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom, top left, top center;
+    background-size: 100% 40px, cover, cover;
+}
+
+.sur-titre {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titre-principal {
+    width: 600px;
+    margin: 20px 0;
+    font-size: 42px;
+}
+
+.sous-titre {
+    width: 500px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.icones-details {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.icone-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+}
+
+/* 4) A propos de nous */
+.a-propos-de-nous {
+    display: flex;
+    width: 90%;
+    gap: 40px;
+    margin: -50px auto 0px auto;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.bloc-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 25%;
+    padding: 30px 20px;
+}
+
+.icone-bloc-info {
+    width: 64px;
+    height: 64px;
+}
+
+.titre-bloc-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 5) Nos espaces */
+.nos-espaces {
+    display: flex;
+    width: 90%;
+    gap: 100px;
+    margin: 50px auto;
+}
+
+.description-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.description-titre h2 {
+    font-size: 42px;
+}
+
+.description-titre .bordure-bas::after {
+    width: 120px;
+    height: 4px;
+}
+
+.description-titre p {
+    font-size: 19px;
+}
+
+.liste-espaces {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.espaces {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.espaces::-webkit-scrollbar {
+    display: none;
+}
+
+.espace {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+    scroll-snap-align: start;
+}
+
+.img-espace {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.liste-espaces .bouton-liste:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.description-espace {
+    width: 100%;
+}
+
+/* 6) Statistiques */
+.statistiques {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+    background: #14293b;
+}
+
+.bloc-statistique {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 18%;
+    padding: 20px;
+}
+
+.icone-bloc-statistique {
+    width: 64px;
+    height: 64px;
+}
+
+.titre-bloc-statistique {
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.paragraphe-bloc-statistique {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* 7) Informations pratiques */
+.informations-pratiques {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.plan-parc {
+    width: 55%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.plan-parc h2 {
+    font-size: 38px;
+    text-align: left;
+}
+
+.plan-parc p {
+    width: 180px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.img-plan-parc {
+    width: 100%;
+    height: stretch;
+    border-radius: 20px;
+    background: url("../public/images/planParcChanot_2.png") no-repeat center center;
+    background-position: top;
+    background-size: contain;
+}
+
+.coordonnes {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.coordonnes h2 {
+    font-size: 38px;
+    text-align: left;
+}
+
+.adresse-et-carte {
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.carte p {
+    width: 150px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.carte button {
+    height: 40px;
+    margin-top: 10px;
+}
+
+.details-coordonnes {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.detail-coordonne h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.detail-coordonne div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 8) Temoignages */
+.temoignages {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.liste-temoignages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.temoignages-defilants {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.temoignages-defilants::-webkit-scrollbar {
+    display: none;
+}
+
+.temoignage {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+    padding: 15px;
+    border: #f4f4f6 3px solid;
+    border-radius: 10px;
+    scroll-snap-align: start;
+}
+
+.liste-temoignages .bouton-liste:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.photo-temoignage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photo-et-texte-temoignage {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.texte-temoignage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.etoile {
+    width: 16px;
+    height: 16px;
+}
+
+/* 9) Sponsors */
+.sponsors {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.liste-sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 150px;
+}
+
+.liste-sponsors img {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 10) Reservation */
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 50px auto;
+    padding: 30px 0px;
+    background: #14293b;
+    border-radius: 20px;
+}
+
+.reservation-info {
+    display: flex;
+    gap: 40px;
+    width: 50%;
+}
+
+.texte-reservation h3 {
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #f5f5f7;
+}
+
+.texte-reservation p {
+    font-size: 18px;
+    color: #f5f5f7;
+}

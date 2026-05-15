@@ -1,0 +1,219 @@
+/* =====================================
+   Contact - structure du fichier CSS
+   1) Base et utilitaires
+   2) Presentation
+   3) Contact
+      - Formulaire de contact
+   4) Boutons
+===================================== */
+
+/* 1) Base et utilitaires */
+body {
+    background: #f4f4f6;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Bordure verticale reutilisable */
+.bordure-droite {
+    position: relative;
+}
+
+.bordure-droite::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 60px;
+    transform: translateY(-50%);
+    background-color: #4791c8;
+}
+
+/* 2) Presentation */
+.presentation {
+    color: #fff;
+    padding: 170px 100px 80px 100px;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(244, 244, 246, 0) 0%,
+            rgba(244, 244, 246, 1) 100%
+        ),
+        linear-gradient(
+            90deg,
+            #14293b 0%,
+            rgba(20, 41, 59, 0.95) 25%,
+            rgba(20, 41, 59, 0.75) 45%,
+            rgba(20, 41, 59, 0.35) 70%,
+            rgba(20, 41, 59, 0) 100%
+        ),
+        url("../public/images/safim23-2607s006©yohanbrandt-1.jpg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom, top left, top center;
+    background-size: 100% 40px, cover, cover;
+}
+
+.sur-titre {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titre-principal {
+    width: 600px;
+    margin: 20px 0;
+    font-size: 42px;
+}
+
+.sous-titre {
+    width: 600px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* 3) Contact */
+.reservation {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.texte-contact {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.texte-contact h1 {
+    font-size: 42px;
+    color: #14293b;
+    margin-bottom: 16px;
+}
+
+.texte-contact h2 {
+    font-size: 22px;
+    color: #14293b;
+}
+
+.bordure-bas {
+    width: 120px;
+    height: 3px;
+    background-color: #4791c8;
+    margin: 0px auto 40px auto;
+}
+
+.formulaire-reservation {
+    margin: 20px auto;
+}
+
+/* Formulaire de contact */
+.partie-message-formulaire {
+    margin: 30px auto;
+    padding: 20px 30px;
+    max-width: 1100px;
+    border-radius: 10px;
+    border: 1px solid #d8e2ea;
+    background: #fff;
+}
+
+.titre-message-formulaire {
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+    color: #14293b;
+}
+
+.ligne-formulaire {
+    margin-bottom: 16px;
+}
+
+.grille-deux-colonnes {
+    display: flex;
+    gap: 16px;
+}
+
+.grille-deux-colonnes .groupe-champ {
+    width: 50%;
+}
+
+.grille-une-colonne {
+    display: flex;
+    flex-direction: column;
+}
+
+.groupe-champ {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.groupe-champ label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f3f57;
+}
+
+.groupe-champ input,
+.groupe-champ textarea {
+    border: 1px solid #c8d7e4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.groupe-champ textarea {
+    min-height: 120px;
+}
+
+.ligne-radio {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.libelle-radio {
+    font-weight: 600;
+    color: #1f3f57;
+}
+
+.radio-option,
+.checkbox-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1f3f57;
+}
+
+.ligne-checkbox {
+    margin: 12px 8px 0 8px;
+}
+
+/* 4) Boutons */
+.btn-soumettre {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 28px;
+    background-color: #0668C1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 280px;
+    height: 60px;
+}
+
+.btn-soumettre:hover {
+    background-color: #1B67A3;
+}

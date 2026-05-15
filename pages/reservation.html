@@ -1,0 +1,1163 @@
+<!DOCTYPE HTML >
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Visual Studio Code">
+  <link rel="stylesheet" href="../style/menu.css" type="text/css">
+  <link rel="stylesheet" href="../style/global.css" type="text/css">
+  <link rel="stylesheet" href="../style/reservation.css" type="text/css">
+  <title>ParcExpo</title>
+  </head>
+  <body>
+    <!-- La barre de navigation -->
+    <nav>
+      <!-- Logo de l'entreprise -->
+      <div class="logo">
+          <a href="../index.html"><img src="../public/images/logo_expobox.png"></a>
+      </div>
+
+      <!-- Menu de navigation -->
+      <ul class="menu">
+          <li>
+            <a class="menu_link" href="../index.html">ACCUEIL</a>
+            <div class="underline"></div>
+          </li>
+          <li>
+            <a class="menu_link" href="./espaces.html">NOS ESPACES</a>
+            <div class="underline"></div>
+          </li>
+          <li class="selected">
+            <a class="menu_link" href="./reservation.html">RÉSERVATION</a>
+            <div class="underline"></div>
+          </li>
+          <li>
+            <a class="menu_link" href="./contact.html">CONTACT</a>
+            <div class="underline"></div>
+          </li>
+      </ul>
+    </nav>
+
+    <!-- Le contenu principal de la page -->
+    <main>
+      <!-- Section de présentation -->
+      <div class="presentation">
+        <!-- Titre de la section -->
+        <h3 class="sur-titre">EXPOBOX - PARC CHANOT</h3>
+        <h1 class="titre-principal">Réservez nos espaces ici !</h1>
+        <p class="sous-titre">Vous pouvez réserver nos différents espaces d'exposition et personnaliser votre expérience selon vos besoins.</p>
+      </div>
+
+      <!-- Section de réservation -->
+      <div class="reservation">
+        <div class="texte-reservation">
+          <h1>Réservez votre espace</h1>
+          <h2>Remplissez le formulaire ci-dessous pour réserver votre espace, choisissez vos options et équipements si nécessaire.</h2>
+        </div>
+        <div class="bordure-bas"></div>
+        <!-- Formulaire de réservation -->
+        <form class="formulaire-reservation" action="" method="post">
+          <!-- Sélection des espaces -->
+          <div class="selection-espace">
+            <h2 class="titre-selection-espace">Sélectionnez le ou les espace(s)</h2>
+            <!-- Liste des espaces disponibles -->
+            <div class="espaces">
+              <!-- Espace d'exposition n°1 -->
+              <div class="espace espace-1">
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais des Congrès : Etage 0</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/palais_des_congrès_floor_0.png" alt="Palais des Congrès">
+                </div>
+                
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-1" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Options de personnalisation de l'espace -->
+                  <div class="options-customisation">
+                    <h3 class="titre-options">Options de personnalisation</h3>
+                    <div class="options">
+                      <div class="option option-1">
+                        <input type="checkbox" id="option-1-espace-1" name="option-1-espace-1">
+                        <label for="option-1-espace-1">Salle Endoume</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-1" id="equipement-1-espace-1">
+                        <label for="equipement-1-espace-1">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-1" id="equipement-2-espace-1">
+                        <label for="equipement-2-espace-1">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-1" id="equipement-3-espace-1">
+                        <label for="equipement-3-espace-1">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-1" id="equipement-4-espace-1">
+                        <label for="equipement-4-espace-1">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-1" id="equipement-5-espace-1">
+                        <label for="equipement-5-espace-1">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-1" id="equipement-6-espace-1">
+                        <label for="equipement-6-espace-1">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-1" id="equipement-7-espace-1">
+                        <label for="equipement-7-espace-1">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-1" id="equipement-8-espace-1">
+                        <label for="equipement-8-espace-1">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-1" id="equipement-9-espace-1">
+                        <label for="equipement-9-espace-1">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-1" id="equipement-10-espace-1">
+                        <label for="equipement-10-espace-1">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-1" id="equipement-11-espace-1">
+                        <label for="equipement-11-espace-1">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-1" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-1" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°2 -->
+              <div class="espace espace-2">
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais des Congrès : Etage 1</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/palais_des_congrès_floor_1.png" alt="Palais des Congrès">
+                </div>
+                
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-2" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Options de personnalisation de l'espace -->
+                  <div class="options-customisation">
+                    <h3 class="titre-options">Options de personnalisation</h3>
+                    <div class="options">
+                      <div class="option option-1">
+                        <input type="checkbox" id="option-1-espace-2" name="option-1-espace-2">
+                        <label for="option-1-espace-2">Auditorium</label>
+                      </div>
+                      <div class="option option-2">
+                        <input type="checkbox" id="option-2-espace-2" name="option-2-espace-2">
+                        <label for="option-2-espace-2">Amphithéâtre Callelongue</label>
+                      </div>
+                      <div class="option option-3">
+                        <input type="checkbox" id="option-3-espace-2" name="option-3-espace-2">
+                        <label for="option-3-espace-2">Grande salle de conférence</label>
+                      </div>
+                      <div class="option option-4">
+                        <input type="checkbox" id="option-4-espace-2" name="option-4-espace-2">
+                        <label for="option-4-espace-2">Petite salle de conférence</label>
+                      </div>
+                      <div class="option option-5">
+                        <input type="checkbox" id="option-5-espace-2" name="option-5-espace-2">
+                        <label for="option-5-espace-2">Bar </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-2" id="equipement-1-espace-2">
+                        <label for="equipement-1-espace-2">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-2" id="equipement-3-espace-2">
+                        <label for="equipement-2-espace-2">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-2" id="equipement-3-espace-2">
+                        <label for="equipement-3-espace-2">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-2" id="equipement-4-espace-2">
+                        <label for="equipement-4-espace-2">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-2" id="equipement-5-espace-2">
+                        <label for="equipement-5-espace-2">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-2" id="equipement-6-espace-2">
+                        <label for="equipement-6-espace-2">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-2" id="equipement-7-espace-2">
+                        <label for="equipement-7-espace-2">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-2" id="equipement-8-espace-2">
+                        <label for="equipement-8-espace-2">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-2" id="equipement-9-espace-2">
+                        <label for="equipement-9-espace-2">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-2" id="equipement-10-espace-2">
+                        <label for="equipement-10-espace-2">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-2" id="equipement-11-espace-2">
+                        <label for="equipement-11-espace-2">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-2" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-2" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°3 -->
+              <div class="espace espace-3">
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais des Congrès : Etage 2</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/palais_des_congrès_floor_2.png" alt="Palais des Congrès">
+                </div>
+                
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-3" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Options de personnalisation de l'espace -->
+                  <div class="options-customisation">
+                    <h3 class="titre-options">Options de personnalisation</h3>
+                    <div class="options">
+                      <div class="option option-1">
+                        <input type="checkbox" id="option-1-espace-3" name="option-1-espace-3">
+                        <label for="option-1-espace-3">Grande salle de conférence</label>
+                      </div>
+                      <div class="option option-2">
+                        <input type="checkbox" id="option-2-espace-3" name="option-2-espace-3">
+                        <label for="option-2-espace-3">Petite salle de conférence</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-3" id="equipement-1-espace-3">
+                        <label for="equipement-1-espace-3">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-3" id="equipement-2-espace-3">
+                        <label for="equipement-2-espace-3">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-3" id="equipement-3-espace-3">
+                        <label for="equipement-3-espace-3">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-3" id="equipement-4-espace-3">
+                        <label for="equipement-4-espace-3">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-3" id="equipement-5-espace-3">
+                        <label for="equipement-5-espace-3">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-3" id="equipement-6-espace-3">
+                        <label for="equipement-6-espace-3">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-3" id="equipement-7-espace-3">
+                        <label for="equipement-7-espace-3">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-3" id="equipement-8-espace-3">
+                        <label for="equipement-8-espace-3">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-3" id="equipement-9-espace-3">
+                        <label for="equipement-9-espace-3">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-3" id="equipement-10-espace-3">
+                        <label for="equipement-10-espace-3">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-3" id="equipement-11-espace-3">
+                        <label for="equipement-11-espace-3">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-3" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-3" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°4 -->
+              <div class="espace espace-4"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais des Arts</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/PalaisArts_RDC.png" alt="Palais des Arts">
+                </div>
+                
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-4" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Options de personnalisation de l'espace -->
+                  <div class="options-customisation">
+                    <h3 class="titre-options">Options de personnalisation</h3>
+                    <div class="options">
+                      <div class="option option-1">
+                        <input type="checkbox" id="option-1-espace-4" name="option-1-espace-4">
+                        <label for="option-1-espace-4">Jardin </label>
+                      </div>
+                      <div class="option option-2">
+                        <input type="checkbox" id="option-2-espace-4" name="option-2-espace-4">
+                        <label for="option-2-espace-4">Service du soir</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-4" id="equipement-1-espace-4">
+                        <label for="equipement-1-espace-4">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-4" id="equipement-2-espace-4">
+                        <label for="equipement-2-espace-4">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-4" id="equipement-3-espace-4">
+                        <label for="equipement-3-espace-4">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-4" id="equipement-4-espace-4">
+                        <label for="equipement-4-espace-4">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-4" id="equipement-5-espace-4">
+                        <label for="equipement-5-espace-4">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-4" id="equipement-6-espace-4">
+                        <label for="equipement-6-espace-4">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-4" id="equipement-7-espace-4">
+                        <label for="equipement-7-espace-4">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-4" id="equipement-8-espace-4">
+                        <label for="equipement-8-espace-4">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-4" id="equipement-9-espace-4">
+                        <label for="equipement-9-espace-4">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-4" id="equipement-10-espace-4">
+                        <label for="equipement-10-espace-4">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-4" id="equipement-11-espace-4">
+                        <label for="equipement-11-espace-4">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-4" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-4" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°5 -->
+              <div class="espace espace-5"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais de la Méditerranée</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/PalaisMediterranee.png" alt="Palais de la Méditerranée">
+                </div>
+
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-5" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-5" id="equipement-1-espace-5">
+                        <label for="equipement-1-espace-5">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-5" id="equipement-2-espace-5">
+                        <label for="equipement-2-espace-5">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-5" id="equipement-3-espace-5">
+                        <label for="equipement-3-espace-5">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-5" id="equipement-4-espace-5">
+                        <label for="equipement-4-espace-5">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-5" id="equipement-5-espace-5">
+                        <label for="equipement-5-espace-5">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-5" id="equipement-6-espace-5">
+                        <label for="equipement-6-espace-5">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-5" id="equipement-7-espace-5">
+                        <label for="equipement-7-espace-5">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-5" id="equipement-8-espace-5">
+                        <label for="equipement-8-espace-5">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-5" id="equipement-9-espace-5">
+                        <label for="equipement-9-espace-5">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-5" id="equipement-10-espace-5">
+                        <label for="equipement-10-espace-5">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-5" id="equipement-11-espace-5">
+                        <label for="equipement-11-espace-5">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-5" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-5" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°6 -->
+              <div class="espace espace-6"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais des Événements</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe//Palais_Evenement.png" alt="Palais des Événements">
+                </div>
+                
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-6" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+                  <!-- Options de personnalisation de l'espace -->
+                  <div class="options-customisation">
+                    <h3 class="titre-options">Options de personnalisation</h3>
+                    <div class="options">
+                      <div class="option option-1">
+                        <input type="checkbox" id="option-1-espace-6" name="option-1-espace-6">
+                        <label for="option-1-espace-6">Plénière</label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-6" id="equipement-1-espace-6">
+                        <label for="equipement-1-espace-6">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-6" id="equipement-2-espace-6">
+                        <label for="equipement-2-espace-6">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-6" id="equipement-3-espace-6">
+                        <label for="equipement-3-espace-6">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-6" id="equipement-4-espace-6">
+                        <label for="equipement-4-espace-6">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-6" id="equipement-5-espace-6">
+                        <label for="equipement-5-espace-6">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-6" id="equipement-6-espace-6">
+                        <label for="equipement-6-espace-6">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-6" id="equipement-7-espace-6">
+                        <label for="equipement-7-espace-6">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-6" id="equipement-8-espace-6">
+                        <label for="equipement-8-espace-6">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-6" id="equipement-9-espace-6">
+                        <label for="equipement-9-espace-6">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-6" id="equipement-10-espace-6">
+                        <label for="equipement-10-espace-6">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-6" id="equipement-11-espace-6">
+                        <label for="equipement-11-espace-6">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-6" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-6" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°7 -->
+              <div class="espace espace-7"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais Phocéen</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/PalaisPhoceen.png" alt="Palais Phocéen">
+                  </div>
+                  
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-7" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-7" id="equipement-1-espace-7">
+                        <label for="equipement-1-espace-7">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-7" id="equipement-2-espace-7">
+                        <label for="equipement-2-espace-7">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-7" id="equipement-3-espace-7">
+                        <label for="equipement-3-espace-7">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-7" id="equipement-4-espace-7">
+                        <label for="equipement-4-espace-7">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-7" id="equipement-5-espace-7">
+                        <label for="equipement-5-espace-7">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-7" id="equipement-6-espace-7">
+                        <label for="equipement-6-espace-7">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-7" id="equipement-7-espace-7">
+                        <label for="equipement-7-espace-7">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-7" id="equipement-8-espace-7">
+                        <label for="equipement-8-espace-7">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-7" id="equipement-9-espace-7">
+                        <label for="equipement-9-espace-7">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-7" id="equipement-10-espace-7">
+                        <label for="equipement-10-espace-7">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-7" id="equipement-11-espace-7">
+                        <label for="equipement-11-espace-7">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-7" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-7" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°8 -->
+              <div class="espace espace-8"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Palais de l'Europe</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/PalaisEurope.png" alt="Palais de l'Europe">
+                  </div>
+                  
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-8" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-8" id="equipement-1-espace-8">
+                        <label for="equipement-1-espace-8">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-8" id="equipement-2-espace-8">
+                        <label for="equipement-2-espace-8">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-8" id="equipement-3-espace-8">
+                        <label for="equipement-3-espace-8">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-8" id="equipement-4-espace-8">
+                        <label for="equipement-4-espace-8">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-8" id="equipement-5-espace-8">
+                        <label for="equipement-5-espace-8">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-8" id="equipement-6-espace-8">
+                        <label for="equipement-6-espace-8">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-8" id="equipement-7-espace-8">
+                        <label for="equipement-7-espace-8">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-8" id="equipement-8-espace-8">
+                        <label for="equipement-8-espace-8">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-8" id="equipement-9-espace-8">
+                        <label for="equipement-9-espace-8">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-8" id="equipement-10-espace-8">
+                        <label for="equipement-10-espace-8">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-8" id="equipement-11-espace-8">
+                        <label for="equipement-11-espace-8">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-8" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-8" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+
+              <!-- Espace d'exposition n°9 -->
+              <div class="espace espace-9"> 
+                <div class="partie-visuelle">
+                  <h2 class="titre-partie-visuelle">Grand Palais</h2>
+                  <img class="img-espace" src="../public/images/espaces/externe/Grand_Palais.png" alt="Grand Palais">
+                  </div>
+                  
+                <!-- Partie de personnalisation de l'espace -->
+                <div id="customisation-espace-9" class="partie-customisation">
+                  <h2 class="titre-customisation">Personnalisez votre espace</h2>
+                  <p class="sous-titre-customisation">Adaptez votre espace selon vos besoins avec nos options et équipements disponibles pour une expérience optimale.</p>
+
+                  <!-- Équipements supplémentaires pour l'espace -->
+                  <div class="equipements-customisation">
+                    <h3 class="titre-equipements">Équipements supplémentaires</h3>
+                    <div class="equipements">
+                      <div class="equipement equipement-1">
+                        <input type="number" name="equipement-1-espace-9" id="equipement-1-espace-9">
+                        <label for="equipement-1-espace-9">Chaises</label>
+                      </div>
+                      <div class="equipement equipement-2">
+                        <input type="number" name="equipement-2-espace-9" id="equipement-2-espace-9">
+                        <label for="equipement-2-espace-9">Tables</label>
+                      </div>
+                      <div class="equipement equipement-3">
+                        <input type="number" name="equipement-3-espace-9" id="equipement-3-espace-9">
+                        <label for="equipement-3-espace-9">Projecteurs</label>
+                      </div>
+                      <div class="equipement equipement-4">
+                        <input type="number" name="equipement-4-espace-9" id="equipement-4-espace-9">
+                        <label for="equipement-4-espace-9">Microphones</label>
+                      </div>
+                      <div class="equipement equipement-5">
+                        <input type="number" name="equipement-5-espace-9" id="equipement-5-espace-9">
+                        <label for="equipement-5-espace-9">Ordinateurs</label>
+                      </div>
+                      <div class="equipement equipement-6">
+                        <input type="number" name="equipement-6-espace-9" id="equipement-6-espace-9">
+                        <label for="equipement-6-espace-9">Grand écrans</label>
+                      </div>
+                      <div class="equipement equipement-7">
+                        <input type="number" name="equipement-7-espace-9" id="equipement-7-espace-9">
+                        <label for="equipement-7-espace-9">Moyens écrans</label>
+                      </div>
+                      <div class="equipement equipement-8">
+                        <input type="number" name="equipement-8-espace-9" id="equipement-8-espace-9">
+                        <label for="equipement-8-espace-9">Petits écrans</label>
+                      </div>
+                      <div class="equipement equipement-9">
+                        <input type="number" name="equipement-9-espace-9" id="equipement-9-espace-9">
+                        <label for="equipement-9-espace-9">Téléphones fixes</label>
+                      </div>
+                      <div class="equipement equipement-10">
+                        <input type="number" name="equipement-10-espace-9" id="equipement-10-espace-9">
+                        <label for="equipement-10-espace-9">Imprimantes</label>
+                      </div>
+                      <div class="equipement equipement-11">
+                        <input type="number" name="equipement-11-espace-9" id="equipement-11-espace-9">
+                        <label for="equipement-11-espace-9">Enceintes</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button id="btn-select-espace-9" class="btn-selection-espace"><img src="../public/images/icônes/add-circle-line.png" alt=""></button>
+                <button id="btn-deselect-espace-9" class="btn-deselection-espace"><img src="../public/images/icônes/indeterminate-circle-line.png" alt=""></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="partie-message-formulaire">
+            <h2 class="titre-message-formulaire">Vos informations</h2>
+
+            <div class="ligne-formulaire ligne-radio">
+              <span class="libelle-radio">Vous etes :</span>
+              <label for="type-client-particulier" class="radio-option">
+                <input type="radio" id="type-client-particulier" name="type-client" value="particulier" checked required>
+                Particulier
+              </label>
+              <label for="type-client-professionnel" class="radio-option">
+                <input type="radio" id="type-client-professionnel" name="type-client" value="professionnel" required>
+                Professionnel
+              </label>
+            </div>
+
+            <div class="ligne-formulaire grille-deux-colonnes">
+              <div class="groupe-champ">
+                <label for="nom-client">Nom</label>
+                <input type="text" id="nom-client" name="nom-client" required>
+              </div>
+              <div class="groupe-champ">
+                <label for="prenom-client">Prenom</label>
+                <input type="text" id="prenom-client" name="prenom-client" required>
+              </div>
+            </div>
+
+            <div id="ligne-entreprise-client" class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="entreprise-client">Nom d'entreprise</label>
+                <input type="text" id="entreprise-client" name="entreprise-client" placeholder="Optionnel pour les particuliers">
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-deux-colonnes">
+              <div class="groupe-champ">
+                <label for="email-client">Email</label>
+                <input type="email" id="email-client" name="email-client" required>
+              </div>
+              <div class="groupe-champ">
+                <label for="telephone-client">Numero de telephone</label>
+                <input type="tel" id="telephone-client" name="telephone-client" required>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="adresse-client">Adresse</label>
+                <input type="text" id="adresse-client" name="adresse-client" required>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-deux-colonnes">
+              <div class="groupe-champ">
+                <label for="date-debut-reservation">Date de debut de reservation</label>
+                <input type="date" id="date-debut-reservation" name="date-debut-reservation" required>
+              </div>
+              <div class="groupe-champ">
+                <label for="date-fin-reservation">Date de fin de reservation</label>
+                <input type="date" id="date-fin-reservation" name="date-fin-reservation" required>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="message-reservation">Message</label>
+                <textarea id="message-reservation" name="message-reservation" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions."></textarea>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire ligne-checkbox">
+              <label for="acceptation-cgu" class="checkbox-option">
+                <input type="checkbox" id="acceptation-cgu" name="acceptation-cgu" required>
+                J'ai lu la politique des conditions generales d'utilisation.
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-soumettre bouton-principal" type="submit">Réserver</button>
+        </form>
+      </div>
+    </main>
+    <!-- Le pied de page -->
+    <footer>
+        <p class="copyright">© 2024 Parc Chanot. Tous droits réservés.</p>
+        <div class="liens-legaux">
+          <a href=""><p>Mentions légales</p></a>
+          <a href=""><p>Politique de confidentialité</p></a>
+        </div>
+    </footer>
+
+    <script>
+      // Script pour les carrousels d'images fait par ChatGPT (seulement cette partie)
+      document.addEventListener("DOMContentLoaded", function () {
+        function initCarouselById(carouselId) {
+          var carousel = document.getElementById(carouselId);
+          if (!carousel) return;
+
+          var prevButton = carousel.querySelector(".bouton-precedant");
+          var nextButton = carousel.querySelector(".bouton-suivant");
+          var track = null;
+
+          for (var i = 0; i < carousel.children.length; i++) {
+            if (carousel.children[i].tagName === "DIV") {
+              track = carousel.children[i];
+              break;
+            }
+          }
+
+          if (!prevButton || !nextButton || !track) return;
+
+          function getStepSize() {
+            var firstImage = track.querySelector(".img-espace");
+            if (!firstImage) return Math.max(track.clientWidth, 1);
+
+            var width = firstImage.getBoundingClientRect().width;
+            if (!width || width < 5) {
+              return Math.max(track.clientWidth, 1);
+            }
+
+            return width;
+          }
+
+          function updateButtons() {
+            var maxScroll = Math.max(track.scrollWidth - track.clientWidth, 0);
+            prevButton.disabled = track.scrollLeft <= 2;
+            nextButton.disabled = track.scrollLeft >= maxScroll - 2;
+          }
+
+          function scrollByStep(direction) {
+            var step = getStepSize();
+            var targetLeft = track.scrollLeft + direction * step;
+            track.scrollTo({ left: targetLeft, behavior: "smooth" });
+          }
+
+          prevButton.addEventListener("click", function () {
+            scrollByStep(-1);
+          });
+
+          nextButton.addEventListener("click", function () {
+            scrollByStep(1);
+          });
+
+          track.addEventListener("scroll", updateButtons, { passive: true });
+          window.addEventListener("resize", updateButtons);
+
+          var images = track.querySelectorAll(".img-espace");
+          images.forEach(function (img) {
+            img.addEventListener("load", updateButtons);
+          });
+
+          window.addEventListener("load", updateButtons);
+          updateButtons();
+        }
+
+        initCarouselById("carousel-espace-1");
+        initCarouselById("carousel-espace-2");
+        initCarouselById("carousel-espace-3");
+        initCarouselById("carousel-espace-4");
+        initCarouselById("carousel-espace-5");
+        initCarouselById("carousel-espace-6");
+        initCarouselById("carousel-espace-7");
+        initCarouselById("carousel-espace-8");
+        initCarouselById("carousel-espace-9");
+      });
+
+      // Script pour la sélection des espaces et l'affichage de la partie de personnalisation (ça c'est moi qui l'ai fait)
+      // Initialement, la partie de personnalisation est cachée et le bouton de désélection est masqué (ça c'est moi qui l'ai fait)
+      document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer les éléments nécessaires pour les espaces 1
+        const customisationEspace1 = document.getElementById("customisation-espace-1");
+        const btnSelectEspace1 = document.getElementById("btn-select-espace-1");
+        const btnDeselectEspace1 = document.getElementById("btn-deselect-espace-1");
+
+        // Récupérer les éléments nécessaires pour les espaces 2
+        const customisationEspace2 = document.getElementById("customisation-espace-2");
+        const btnSelectEspace2 = document.getElementById("btn-select-espace-2");
+        const btnDeselectEspace2 = document.getElementById("btn-deselect-espace-2");
+
+        // Récupérer les éléments nécessaires pour les espaces 3
+        const customisationEspace3 = document.getElementById("customisation-espace-3");
+        const btnSelectEspace3 = document.getElementById("btn-select-espace-3");
+        const btnDeselectEspace3 = document.getElementById("btn-deselect-espace-3");
+
+        // Récupérer les éléments nécessaires pour les espaces 4
+        const customisationEspace4 = document.getElementById("customisation-espace-4");
+        const btnSelectEspace4 = document.getElementById("btn-select-espace-4");
+        const btnDeselectEspace4 = document.getElementById("btn-deselect-espace-4");
+
+        // Récupérer les éléments nécessaires pour les espaces 5
+        const customisationEspace5 = document.getElementById("customisation-espace-5");
+        const btnSelectEspace5 = document.getElementById("btn-select-espace-5");
+        const btnDeselectEspace5 = document.getElementById("btn-deselect-espace-5");
+
+        // Récupérer les éléments nécessaires pour les espaces 6
+        const customisationEspace6 = document.getElementById("customisation-espace-6");
+        const btnSelectEspace6 = document.getElementById("btn-select-espace-6");
+        const btnDeselectEspace6 = document.getElementById("btn-deselect-espace-6");
+
+        // Récupérer les éléments nécessaires pour les espaces 7
+        const customisationEspace7 = document.getElementById("customisation-espace-7");
+        const btnSelectEspace7 = document.getElementById("btn-select-espace-7");
+        const btnDeselectEspace7 = document.getElementById("btn-deselect-espace-7");
+
+        // Récupérer les éléments nécessaires pour les espaces 8
+        const customisationEspace8 = document.getElementById("customisation-espace-8");
+        const btnSelectEspace8 = document.getElementById("btn-select-espace-8");
+        const btnDeselectEspace8 = document.getElementById("btn-deselect-espace-8");
+
+        // Récupérer les éléments nécessaires pour les espaces 9
+        const customisationEspace9 = document.getElementById("customisation-espace-9");
+        const btnSelectEspace9 = document.getElementById("btn-select-espace-9");
+        const btnDeselectEspace9 = document.getElementById("btn-deselect-espace-9");
+
+         // Récupérer les boutons radio pour le type de client
+        const radioParticulier = document.getElementById("type-client-particulier");
+        const radioProfessionnel = document.getElementById("type-client-professionnel");
+
+        // Récupérer la ligne du champ "Nom d'entreprise" et l'input correspondant
+        const ligneEntreprise = document.getElementById("ligne-entreprise-client");
+        const inputEntreprise = document.getElementById("entreprise-client");
+
+        // Fonction pour mettre à jour la visibilité et les exigences du champ "Nom d'entreprise" en fonction du type de client sélectionné
+        function mettreAJourChampEntreprise() {
+          // Vérifier que tous les éléments nécessaires sont présents avant de continuer
+          if (!radioParticulier || !radioProfessionnel || !ligneEntreprise || !inputEntreprise) {
+            return;
+          }
+
+          // Afficher le champ "Nom d'entreprise" et le rendre obligatoire si "Professionnel" est sélectionné, sinon le cacher et le rendre optionnel
+          if (radioProfessionnel.checked) {
+            ligneEntreprise.style.display = "flex";
+            inputEntreprise.required = true;
+            inputEntreprise.placeholder = "Nom de votre entreprise";
+          } else {
+            ligneEntreprise.style.display = "none";
+            inputEntreprise.required = false;
+            inputEntreprise.value = "";
+            inputEntreprise.placeholder = "Optionnel pour les particuliers";
+          }
+        }
+
+        // Mettre à jour le champ "Nom d'entreprise" lorsque le type de client change
+        if (radioParticulier && radioProfessionnel) {
+          radioParticulier.addEventListener("change", mettreAJourChampEntreprise);
+          radioProfessionnel.addEventListener("change", mettreAJourChampEntreprise);
+          mettreAJourChampEntreprise();
+        }
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 1 est cliqué
+        btnSelectEspace1.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace1.style.transform = "translateY(0)";
+          customisationEspace1.style.height = "auto";
+          btnSelectEspace1.style.display = "none";
+          btnDeselectEspace1.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 1 est cliqué
+        btnDeselectEspace1.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace1.style.transform = "translateY(-300px)";
+            customisationEspace1.style.height = "0px";
+            btnSelectEspace1.style.display = "block";
+            btnDeselectEspace1.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 2 est cliqué
+        btnSelectEspace2.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace2.style.transform = "translateY(0)";
+          customisationEspace2.style.height = "auto";
+          btnSelectEspace2.style.display = "none";
+          btnDeselectEspace2.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 2 est cliqué
+        btnDeselectEspace2.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace2.style.transform = "translateY(-300px)";
+            customisationEspace2.style.height = "0px";
+            btnSelectEspace2.style.display = "block";
+            btnDeselectEspace2.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 3 est cliqué
+        btnSelectEspace3.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace3.style.transform = "translateY(0)";
+          customisationEspace3.style.height = "auto";
+          btnSelectEspace3.style.display = "none";
+          btnDeselectEspace3.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 3 est cliqué
+        btnDeselectEspace3.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace3.style.transform = "translateY(-300px)";
+            customisationEspace3.style.height = "0px";
+            btnSelectEspace3.style.display = "block";
+            btnDeselectEspace3.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 4 est cliqué
+        btnSelectEspace4.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace4.style.transform = "translateY(0)";
+          customisationEspace4.style.height = "auto";
+          btnSelectEspace4.style.display = "none";
+          btnDeselectEspace4.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 4 est cliqué
+        btnDeselectEspace4.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace4.style.transform = "translateY(-300px)";
+            customisationEspace4.style.height = "0px";
+            btnSelectEspace4.style.display = "block";
+            btnDeselectEspace4.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 5 est cliqué
+        btnSelectEspace5.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace5.style.transform = "translateY(0)";
+          customisationEspace5.style.height = "auto";
+          btnSelectEspace5.style.display = "none";
+          btnDeselectEspace5.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 5 est cliqué
+        btnDeselectEspace5.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace5.style.transform = "translateY(-300px)";
+            customisationEspace5.style.height = "0px";
+            btnSelectEspace5.style.display = "block";
+            btnDeselectEspace5.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 6 est cliqué
+        btnSelectEspace6.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace6.style.transform = "translateY(0)";
+          customisationEspace6.style.height = "auto";
+          btnSelectEspace6.style.display = "none";
+          btnDeselectEspace6.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 6 est cliqué
+        btnDeselectEspace6.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace6.style.transform = "translateY(-300px)";
+            customisationEspace6.style.height = "0px";
+            btnSelectEspace6.style.display = "block";
+            btnDeselectEspace6.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 7 est cliqué
+        btnSelectEspace7.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace7.style.transform = "translateY(0)";
+          customisationEspace7.style.height = "auto";
+          btnSelectEspace7.style.display = "none";
+          btnDeselectEspace7.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 7 est cliqué
+        btnDeselectEspace7.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace7.style.transform = "translateY(-300px)";
+            customisationEspace7.style.height = "0px";
+            btnSelectEspace7.style.display = "block";
+            btnDeselectEspace7.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 8 est cliqué
+        btnSelectEspace8.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace8.style.transform = "translateY(0)";
+          customisationEspace8.style.height = "auto";
+          btnSelectEspace8.style.display = "none";
+          btnDeselectEspace8.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 8 est cliqué
+        btnDeselectEspace8.addEventListener("click", function (event) {
+          event.preventDefault();
+            customisationEspace8.style.transform = "translateY(-300px)";
+            customisationEspace8.style.height = "0px";
+            btnSelectEspace8.style.display = "block";
+            btnDeselectEspace8.style.display = "none";
+        });
+
+        // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 9 est cliqué
+        btnSelectEspace9.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace9.style.transform = "translateY(0)";
+          customisationEspace9.style.height = "auto";
+          btnSelectEspace9.style.display = "none";
+          btnDeselectEspace9.style.display = "block";
+        });
+
+        // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 9 est cliqué
+        btnDeselectEspace9.addEventListener("click", function (event) {
+          event.preventDefault();
+          customisationEspace9.style.transform = "translateY(-300px)";
+          customisationEspace9.style.height = "0px";
+          btnSelectEspace9.style.display = "block";
+          btnDeselectEspace9.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+  
+</html>

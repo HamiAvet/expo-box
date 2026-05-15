@@ -1,0 +1,178 @@
+<!DOCTYPE HTML >
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Visual Studio Code">
+  <link rel="stylesheet" href="../style/menu.css" type="text/css">
+  <link rel="stylesheet" href="../style/global.css" type="text/css">
+  <link rel="stylesheet" href="../style/contact.css" type="text/css">
+  <title>ParcExpo</title>
+  </head>
+  <body >
+    <!-- La barre de navigation -->
+    <nav>
+      <!-- Logo de l'entreprise -->
+      <div class="logo">
+          <a href="../index.html"><img src="../public/images/logo_expobox.png"></a>
+      </div>
+
+      <!-- Menu de navigation -->
+      <ul class="menu">
+          <li>
+            <a class="menu_link" href="../index.html">ACCUEIL</a>
+            <div class="underline"></div>
+          </li>
+          <li>
+            <a class="menu_link" href="./espaces.html">NOS ESPACES</a>
+            <div class="underline"></div>
+          </li>
+          <li>
+            <a class="menu_link" href="./reservation.html">RÉSERVATION</a>
+            <div class="underline"></div>
+          </li>
+          <li class="selected">
+            <a class="menu_link" href="./contact.html">CONTACT</a>
+            <div class="underline"></div>
+          </li>
+      </ul>
+    </nav>
+
+    <!-- Le contenu principal de la page -->
+    <main>
+      <!-- Section de présentation -->
+      <div class="presentation">
+        <!-- Titre de la section -->
+        <h3 class="sur-titre">EXPOBOX - PARC CHANOT</h3>
+        <h1 class="titre-principal">Contactez-nous !</h1>
+        <p class="sous-titre">Vous pouvez nous contacter pour toute question ou demande d'information, nous serons ravis de vous aider !</p>
+      </div>
+
+      <!-- Section de contact -->
+      <div class="contact">
+        <div class="texte-contact">
+          <h1>Contactez-nous</h1>
+          <h2>Remplissez le formulaire ci-dessous pour nous envoyer un message, nous vous répondrons dans les plus brefs délais.</h2>
+        </div>
+        <div class="bordure-bas"></div>
+        <!-- Formulaire de contact -->
+        <form class="formulaire-reservation" action="" method="post">
+          <div class="partie-message-formulaire">
+            <h2 class="titre-message-formulaire">Vos informations</h2>
+
+            <div class="ligne-formulaire ligne-radio">
+              <span class="libelle-radio">Vous etes :</span>
+              <label for="type-client-particulier" class="radio-option">
+                <input type="radio" id="type-client-particulier" name="type-client" value="particulier" checked required>
+                Particulier
+              </label>
+              <label for="type-client-professionnel" class="radio-option">
+                <input type="radio" id="type-client-professionnel" name="type-client" value="professionnel" required>
+                Professionnel
+              </label>
+            </div>
+
+            <div class="ligne-formulaire grille-deux-colonnes">
+              <div class="groupe-champ">
+                <label for="nom-client">Nom</label>
+                <input type="text" id="nom-client" name="nom-client" required>
+              </div>
+              <div class="groupe-champ">
+                <label for="prenom-client">Prenom</label>
+                <input type="text" id="prenom-client" name="prenom-client" required>
+              </div>
+            </div>
+
+            <div id="ligne-entreprise-client" class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="entreprise-client">Nom d'entreprise</label>
+                <input type="text" id="entreprise-client" name="entreprise-client">
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-deux-colonnes">
+              <div class="groupe-champ">
+                <label for="email-client">Email</label>
+                <input type="email" id="email-client" name="email-client" required>
+              </div>
+              <div class="groupe-champ">
+                <label for="telephone-client">Numero de telephone</label>
+                <input type="tel" id="telephone-client" name="telephone-client" required>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="adresse-client">Adresse</label>
+                <input type="text" id="adresse-client" name="adresse-client" required>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire grille-une-colonne">
+              <div class="groupe-champ">
+                <label for="message-reservation">Message</label>
+                <textarea id="message-reservation" name="message-reservation" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions."></textarea>
+              </div>
+            </div>
+
+            <div class="ligne-formulaire ligne-checkbox">
+              <label for="acceptation-cgu" class="checkbox-option">
+                <input type="checkbox" id="acceptation-cgu" name="acceptation-cgu" required>
+                J'ai lu la politique des conditions generales d'utilisation.
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-soumettre bouton-principal" type="submit">Réserver</button>
+        </form>
+      </div>
+    </main>
+    <!-- Le pied de page -->
+    <footer>
+        <p class="copyright">© 2024 Parc Chanot. Tous droits réservés.</p>
+        <div class="liens-legaux">
+          <a href=""><p>Mentions légales</p></a>
+          <a href=""><p>Politique de confidentialité</p></a>
+        </div>
+    </footer>
+
+    <script>
+      // Initialement, la partie de personnalisation est cachée et le bouton de désélection est masqué (ça c'est moi qui l'ai fait)
+      document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer les boutons radio pour le type de client
+        const radioParticulier = document.getElementById("type-client-particulier");
+        const radioProfessionnel = document.getElementById("type-client-professionnel");
+
+        // Récupérer la ligne du champ "Nom d'entreprise" et l'input correspondant
+        const ligneEntreprise = document.getElementById("ligne-entreprise-client");
+        const inputEntreprise = document.getElementById("entreprise-client");
+
+        // Fonction pour mettre à jour la visibilité et les exigences du champ "Nom d'entreprise" en fonction du type de client sélectionné
+        function mettreAJourChampEntreprise() {
+          // Vérifier que tous les éléments nécessaires sont présents avant de continuer
+          if (!radioParticulier || !radioProfessionnel || !ligneEntreprise || !inputEntreprise) {
+            return;
+          }
+
+          // Afficher le champ "Nom d'entreprise" et le rendre obligatoire si "Professionnel" est sélectionné, sinon le cacher et le rendre optionnel
+          if (radioProfessionnel.checked) {
+            ligneEntreprise.style.display = "flex";
+            inputEntreprise.required = true;
+            inputEntreprise.placeholder = "Nom de votre entreprise";
+          } else {
+            ligneEntreprise.style.display = "none";
+            inputEntreprise.required = false;
+            inputEntreprise.value = "";
+            inputEntreprise.placeholder = "Optionnel pour les particuliers";
+          }
+        }
+
+        // Mettre à jour le champ "Nom d'entreprise" lorsque le type de client change
+        if (radioParticulier && radioProfessionnel) {
+          radioParticulier.addEventListener("change", mettreAJourChampEntreprise);
+          radioProfessionnel.addEventListener("change", mettreAJourChampEntreprise);
+          mettreAJourChampEntreprise();
+        }
+      });
+    </script>
+  </body>
+</html>

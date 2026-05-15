@@ -1,0 +1,349 @@
+/* =====================================
+   Réservation - structure du fichier CSS
+   1) Base et utilitaires
+   2) Presentation
+   3) Reservation
+      - Sélection des espaces
+      - Formulaire de message
+   4) Boutons
+===================================== */
+
+/* 1) Base et utilitaires */
+body {
+    background: #f4f4f6;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Bordure verticale reutilisable */
+.bordure-droite {
+    position: relative;
+}
+
+.bordure-droite::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 60px;
+    transform: translateY(-50%);
+    background-color: #4791c8;
+}
+
+/* 2) Presentation */
+.presentation {
+    color: #fff;
+    padding: 170px 100px 80px 100px;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(244, 244, 246, 0) 0%,
+            rgba(244, 244, 246, 1) 100%
+        ),
+        linear-gradient(
+            90deg,
+            #14293b 0%,
+            rgba(20, 41, 59, 0.95) 25%,
+            rgba(20, 41, 59, 0.75) 45%,
+            rgba(20, 41, 59, 0.35) 70%,
+            rgba(20, 41, 59, 0) 100%
+        ),
+        url("../public/images/safim23-2607s006©yohanbrandt-1.jpg");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom, top left, top center;
+    background-size: 100% 40px, cover, cover;
+}
+
+.sur-titre {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titre-principal {
+    width: 600px;
+    margin: 20px 0;
+    font-size: 42px;
+}
+
+.sous-titre {
+    width: 600px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* 3) Reservation */
+.reservation {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.texte-reservation {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.texte-reservation h1 {
+    font-size: 42px;
+    color: #14293b;
+    margin-bottom: 16px;
+}
+
+.texte-reservation h2 {
+    font-size: 22px;
+    color: #14293b;
+}
+
+.bordure-bas {
+    width: 120px;
+    height: 3px;
+    background-color: #4791c8;
+    margin: 0px auto 40px auto;
+}
+/* Sélection des espaces */
+
+.formulaire-reservation {
+    margin: 20px auto;
+}
+
+.titre-selection-espace {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.espaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.espace {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 25%;
+}
+
+.img-espace {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;   /* même ratio partout */
+    object-fit: cover;      /* pas déformé, recadrage propre */
+    object-position: center;
+}
+
+.partie-visuelle {
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.titre-partie-visuelle {
+    font-size: 24px;
+    color: #14293b;
+    margin-bottom: 15px;
+}
+
+.partie-customisation {
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+    overflow: hidden;
+    transform: translateY(-300px);
+    height: 0px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.titre-customisation, .sous-titre-customisation, .options-customisation, .equipements-customisation {
+    text-align: center;
+}
+
+.titre-customisation {
+    font-size: 24px;
+    color: #14293b;
+}
+
+.titre-options, .titre-equipements {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sous-titre-customisation {
+    font-size: 18px;
+    color: #14293b;
+    margin: 0 auto;
+}
+
+.options, .equipements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.option {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.equipement {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.equipement input {
+    width: 50px;
+    height: 20px;
+}
+
+.btn-selection-espace, .btn-deselection-espace {
+    width: 64px;
+    height: 64px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+}
+
+.btn-selection-espace {
+    margin-top: -60px;
+}
+
+.btn-deselection-espace {
+    width: 64px;
+    height: 64px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    display: none;
+}
+/* Formulaire de message
+/* Partie message du formulaire de réservation */
+.partie-message-formulaire {
+    margin: 30px auto;
+    padding: 20px 30px;
+    max-width: 1100px;
+    border-radius: 10px;
+    border: 1px solid #d8e2ea;
+    background: #fff;
+}
+
+.titre-message-formulaire {
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+    color: #14293b;
+}
+
+.ligne-formulaire {
+    margin-bottom: 16px;
+}
+
+.grille-deux-colonnes {
+    display: flex;
+    gap: 16px;
+}
+
+.grille-deux-colonnes .groupe-champ {
+    width: 50%;
+}
+
+.grille-une-colonne {
+    display: flex;
+    flex-direction: column;
+}
+
+.groupe-champ {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.groupe-champ label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f3f57;
+}
+
+.groupe-champ input,
+.groupe-champ textarea {
+    border: 1px solid #c8d7e4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.groupe-champ textarea {
+    min-height: 120px;
+}
+
+.ligne-radio {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.libelle-radio {
+    font-weight: 600;
+    color: #1f3f57;
+}
+
+.radio-option,
+.checkbox-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1f3f57;
+}
+
+.ligne-checkbox {
+    margin: 12px 8px 0 8px;
+}
+
+/* 4) Boutons */
+.btn-soumettre {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 28px;
+    background-color: #0668C1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 280px;
+    height: 60px;
+}
+
+.btn-soumettre:hover {
+    background-color: #1B67A3;
+}
