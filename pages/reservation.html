@@ -60,9 +60,9 @@
           <div class="selection-espace">
             <h2 class="titre-selection-espace">Sélectionnez le ou les espace(s)</h2>
             <!-- Liste des espaces disponibles -->
-            <div class="espaces">
+            <div id="espaces" class="espaces">
               <!-- Espace d'exposition n°1 -->
-              <div class="espace espace-1">
+              <div class="espace espace-selectionnee espace-1">
                 <div class="partie-visuelle">
                   <h2 class="titre-partie-visuelle">Palais des Congrès : Etage 0</h2>
                   <img class="img-espace" src="../public/images/espaces/externe/palais_des_congrès_floor_0.png" alt="Palais des Congrès">
@@ -86,7 +86,7 @@
                   <!-- Équipements supplémentaires pour l'espace -->
                   <div class="equipements-customisation">
                     <h3 class="titre-equipements">Équipements supplémentaires</h3>
-                    <div class="equipements">
+                    <div class="equipements equipements-espace-1">
                       <div class="equipement equipement-1">
                         <input type="number" name="equipement-1-espace-1" id="equipement-1-espace-1">
                         <label for="equipement-1-espace-1">Chaises</label>
@@ -915,52 +915,128 @@
       // Script pour la sélection des espaces et l'affichage de la partie de personnalisation (ça c'est moi qui l'ai fait)
       // Initialement, la partie de personnalisation est cachée et le bouton de désélection est masqué (ça c'est moi qui l'ai fait)
       document.addEventListener("DOMContentLoaded", function () {
+        let listeEspaceSelectionne = []; // Tableau pour stocker les espaces sélectionnés
+        function verifierEspaceSelectionne() {
+          listeEspaceSelectionne = [];
+
+          const espacesSelectionnes = document.querySelectorAll(".espace.espace-selectionne");
+
+          espacesSelectionnes.forEach(function (espace) {
+            let listeOptionsSelectionnees = [];
+            let listeEquipementsSelectionnes = [];
+            const nomEspace = espace.querySelector(".partie-visuelle h2").textContent.trim();
+            const customisationEspace = espace.querySelector(".partie-customisation");
+            const optionsCustomisation = customisationEspace.querySelector(".options-customisation");
+            const equipementsCustomisation = customisationEspace.querySelector(".equipements-customisation");
+            const equipements = equipementsCustomisation.querySelectorAll(".equipement");
+            const options = optionsCustomisation.querySelectorAll(".option");
+            options.forEach(function (option) {
+              const checkbox = option.querySelector("input[type='checkbox']");
+              const label = option.querySelector("label");
+              if (checkbox.checked) {
+                const nomOptionSelectionnee = label.textContent.trim();
+                listeOptionsSelectionnees.push(nomOptionSelectionnee);
+              }
+            });
+
+            equipements.forEach(function (equipement) {
+              const input = equipement.querySelector("input[type='number']");
+              const label = equipement.querySelector("label");
+              if (input.value && parseInt(input.value) > 0) {
+                const nomEquipementSelectionne = label.textContent.trim();
+                const quantiteEquipementSelectionne = parseInt(input.value);
+                listeEquipementsSelectionnes.push({
+                  nomEquipement: nomEquipementSelectionne,
+                  quantite: quantiteEquipementSelectionne
+                });
+              }
+            });
+            
+            listeEspaceSelectionne.push({
+              nomEspace: nomEspace,
+              options: listeOptionsSelectionnees,
+              equipements: listeEquipementsSelectionnes
+            });
+
+
+          });
+
+          console.log(listeEspaceSelectionne);
+        }
+        
         // Récupérer les éléments nécessaires pour les espaces 1
+        const espace1 = document.querySelector(".espace-1");
         const customisationEspace1 = document.getElementById("customisation-espace-1");
         const btnSelectEspace1 = document.getElementById("btn-select-espace-1");
         const btnDeselectEspace1 = document.getElementById("btn-deselect-espace-1");
+        const optionsEspace1 = customisationEspace1.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace1 = customisationEspace1.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 2
+        const espace2 = document.querySelector(".espace-2");
         const customisationEspace2 = document.getElementById("customisation-espace-2");
         const btnSelectEspace2 = document.getElementById("btn-select-espace-2");
         const btnDeselectEspace2 = document.getElementById("btn-deselect-espace-2");
+        const optionsEspace2 = customisationEspace2.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace2 = customisationEspace2.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 3
+        const espace3 = document.querySelector(".espace-3");
         const customisationEspace3 = document.getElementById("customisation-espace-3");
         const btnSelectEspace3 = document.getElementById("btn-select-espace-3");
         const btnDeselectEspace3 = document.getElementById("btn-deselect-espace-3");
+        const optionsEspace3 = customisationEspace3.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace3 = customisationEspace3.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 4
+        const espace4 = document.querySelector(".espace-4");
         const customisationEspace4 = document.getElementById("customisation-espace-4");
         const btnSelectEspace4 = document.getElementById("btn-select-espace-4");
         const btnDeselectEspace4 = document.getElementById("btn-deselect-espace-4");
+        const optionsEspace4 = customisationEspace4.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace4 = customisationEspace4.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 5
+        const espace5 = document.querySelector(".espace-5");
         const customisationEspace5 = document.getElementById("customisation-espace-5");
         const btnSelectEspace5 = document.getElementById("btn-select-espace-5");
         const btnDeselectEspace5 = document.getElementById("btn-deselect-espace-5");
+        const optionsEspace5 = customisationEspace5.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace5 = customisationEspace5.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 6
+        const espace6 = document.querySelector(".espace-6");
         const customisationEspace6 = document.getElementById("customisation-espace-6");
         const btnSelectEspace6 = document.getElementById("btn-select-espace-6");
         const btnDeselectEspace6 = document.getElementById("btn-deselect-espace-6");
+        const optionsEspace6 = customisationEspace6.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace6 = customisationEspace6.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 7
+        const espace7 = document.querySelector(".espace-7");
         const customisationEspace7 = document.getElementById("customisation-espace-7");
         const btnSelectEspace7 = document.getElementById("btn-select-espace-7");
         const btnDeselectEspace7 = document.getElementById("btn-deselect-espace-7");
-
+        const optionsEspace7 = customisationEspace7.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace7 = customisationEspace7.querySelectorAll(".equipement input[type='number']");
+        
         // Récupérer les éléments nécessaires pour les espaces 8
+        const espace8 = document.querySelector(".espace-8");
         const customisationEspace8 = document.getElementById("customisation-espace-8");
         const btnSelectEspace8 = document.getElementById("btn-select-espace-8");
         const btnDeselectEspace8 = document.getElementById("btn-deselect-espace-8");
+        const optionsEspace8 = customisationEspace8.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace8 = customisationEspace8.querySelectorAll(".equipement input[type='number']");
 
         // Récupérer les éléments nécessaires pour les espaces 9
+        const espace9 = document.querySelector(".espace-9");
         const customisationEspace9 = document.getElementById("customisation-espace-9");
         const btnSelectEspace9 = document.getElementById("btn-select-espace-9");
         const btnDeselectEspace9 = document.getElementById("btn-deselect-espace-9");
+        const optionsEspace9 = customisationEspace9.querySelectorAll(".option input[type='checkbox']");
+        const equipementsEspace9 = customisationEspace9.querySelectorAll(".equipement input[type='number']");
 
-         // Récupérer les boutons radio pour le type de client
+        // Récupérer les boutons radio pour le type de client
         const radioParticulier = document.getElementById("type-client-particulier");
         const radioProfessionnel = document.getElementById("type-client-professionnel");
 
@@ -995,6 +1071,8 @@
           mettreAJourChampEntreprise();
         }
 
+
+
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 1 est cliqué
         btnSelectEspace1.addEventListener("click", function (event) {
           event.preventDefault();
@@ -1002,6 +1080,8 @@
           customisationEspace1.style.height = "auto";
           btnSelectEspace1.style.display = "none";
           btnDeselectEspace1.style.display = "block";
+          espace1.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 1 est cliqué
@@ -1011,6 +1091,22 @@
             customisationEspace1.style.height = "0px";
             btnSelectEspace1.style.display = "block";
             btnDeselectEspace1.style.display = "none";
+            espace1.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace1.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace1.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 2 est cliqué
@@ -1020,6 +1116,8 @@
           customisationEspace2.style.height = "auto";
           btnSelectEspace2.style.display = "none";
           btnDeselectEspace2.style.display = "block";
+          espace2.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 2 est cliqué
@@ -1029,6 +1127,22 @@
             customisationEspace2.style.height = "0px";
             btnSelectEspace2.style.display = "block";
             btnDeselectEspace2.style.display = "none";
+            espace2.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace2.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace2.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 3 est cliqué
@@ -1038,6 +1152,8 @@
           customisationEspace3.style.height = "auto";
           btnSelectEspace3.style.display = "none";
           btnDeselectEspace3.style.display = "block";
+          espace3.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 3 est cliqué
@@ -1047,6 +1163,22 @@
             customisationEspace3.style.height = "0px";
             btnSelectEspace3.style.display = "block";
             btnDeselectEspace3.style.display = "none";
+            espace3.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace3.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace3.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 4 est cliqué
@@ -1056,6 +1188,8 @@
           customisationEspace4.style.height = "auto";
           btnSelectEspace4.style.display = "none";
           btnDeselectEspace4.style.display = "block";
+          espace4.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 4 est cliqué
@@ -1065,6 +1199,22 @@
             customisationEspace4.style.height = "0px";
             btnSelectEspace4.style.display = "block";
             btnDeselectEspace4.style.display = "none";
+            espace4.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace4.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace4.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 5 est cliqué
@@ -1074,6 +1224,8 @@
           customisationEspace5.style.height = "auto";
           btnSelectEspace5.style.display = "none";
           btnDeselectEspace5.style.display = "block";
+          espace5.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 5 est cliqué
@@ -1083,6 +1235,22 @@
             customisationEspace5.style.height = "0px";
             btnSelectEspace5.style.display = "block";
             btnDeselectEspace5.style.display = "none";
+            espace5.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace5.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace5.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 6 est cliqué
@@ -1092,6 +1260,8 @@
           customisationEspace6.style.height = "auto";
           btnSelectEspace6.style.display = "none";
           btnDeselectEspace6.style.display = "block";
+          espace6.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 6 est cliqué
@@ -1101,6 +1271,22 @@
             customisationEspace6.style.height = "0px";
             btnSelectEspace6.style.display = "block";
             btnDeselectEspace6.style.display = "none";
+            espace6.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace6.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace6.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 7 est cliqué
@@ -1110,6 +1296,8 @@
           customisationEspace7.style.height = "auto";
           btnSelectEspace7.style.display = "none";
           btnDeselectEspace7.style.display = "block";
+          espace7.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 7 est cliqué
@@ -1119,6 +1307,22 @@
             customisationEspace7.style.height = "0px";
             btnSelectEspace7.style.display = "block";
             btnDeselectEspace7.style.display = "none";
+            espace7.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();  
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace7.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace7.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 8 est cliqué
@@ -1128,6 +1332,8 @@
           customisationEspace8.style.height = "auto";
           btnSelectEspace8.style.display = "none";
           btnDeselectEspace8.style.display = "block";
+          espace8.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 8 est cliqué
@@ -1137,6 +1343,22 @@
             customisationEspace8.style.height = "0px";
             btnSelectEspace8.style.display = "block";
             btnDeselectEspace8.style.display = "none";
+            espace8.classList.remove("espace-selectionne");
+            verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace8.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace8.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
 
         // Afficher la partie de personnalisation et masquer le bouton de sélection lorsque le bouton de sélection 9 est cliqué
@@ -1146,6 +1368,8 @@
           customisationEspace9.style.height = "auto";
           btnSelectEspace9.style.display = "none";
           btnDeselectEspace9.style.display = "block";
+          espace9.classList.add("espace-selectionne");
+          verifierEspaceSelectionne();
         });
 
         // Cacher la partie de personnalisation et afficher le bouton de sélection lorsque le bouton de désélection 9 est cliqué
@@ -1155,9 +1379,24 @@
           customisationEspace9.style.height = "0px";
           btnSelectEspace9.style.display = "block";
           btnDeselectEspace9.style.display = "none";
+          espace9.classList.remove("espace-selectionne");
+          verifierEspaceSelectionne();
+        });
+
+        // Ajouter un écouteur d'événement à chaque checkbox de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        optionsEspace9.forEach(function (checkbox) {
+          checkbox.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
+        });
+
+        // Ajouter un écouteur d'événement à chaque input de type number de la partie de personnalisation pour vérifier les espaces sélectionnés à chaque changement
+        equipementsEspace9.forEach(function (input) {
+          input.addEventListener("change", function () {
+            verifierEspaceSelectionne();
+          });
         });
       });
     </script>
   </body>
-  
 </html>
