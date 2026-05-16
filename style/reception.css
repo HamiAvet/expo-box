@@ -1,22 +1,133 @@
-main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    gap: 32px;
-}
+/* =====================================
+   Reception Contact - structure CSS
+   1) Base
+   2) Presentation
+   3) Confirmation
+===================================== */
 
+/* 1) Base */
 body {
     background: #f4f4f6;
 }
 
-button {
-    border: none;
+nav {
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* 3) Confirmation */
+.confirmation {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.confirmation-entete {
+    text-align: center;
+}
+
+.icone-succes {
+    width: 72px;
+    height: 72px;
+    background-color: #0668c1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 36px;
+    color: #fff;
+}
+
+.confirmation-entete h1 {
+    font-size: 36px;
+    color: #14293b;
+    margin-bottom: 12px;
+}
+
+.confirmation-entete p {
+    font-size: 18px;
+    color: #4a6070;
+}
+
+.bordure-bas {
+    width: 80px;
+    height: 3px;
+    background-color: #117bd1;
+    margin: 20px auto 0 auto;
+}
+
+.recap-carte {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #d8e2ea;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.recap-carte h2 {
+    font-size: 22px;
+    color: #14293b;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f4f7;
+}
+
+.recap-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.recap-liste li {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    color: #1f3f57;
+    align-items: flex-start;
+}
+
+.recap-liste li strong {
+    min-width: 120px;
+    color: #14293b;
+}
+
+.recap-liste .message-texte {
+    background: #f4f4f6;
     border-radius: 6px;
+    padding: 10px 14px;
+    flex: 1;
+}
+
+.actions-confirmation {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-retour {
+    display: inline-block;
+    background-color: #0668c1;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
-    cursor: pointer;
-    text-align: center;
     transition: 0.3s;
+}
+
+.btn-retour:hover {
+    background-color: #1b67a3;
 }
 
 /* Bordure verticale reutilisable */
@@ -32,43 +143,5 @@ button {
     width: 2px;
     height: 60px;
     transform: translateY(-50%);
-    background-color: #4791c8;
-}
-
-/* 2) Presentation */
-.presentation {
-    color: #fff;
-    padding: 170px 100px 80px 100px;
-    background-image:
-        linear-gradient(
-            180deg,
-            rgba(244, 244, 246, 0) 0%,
-            rgba(244, 244, 246, 1) 100%
-        ),
-        linear-gradient(
-            90deg,
-            #14293b 0%,
-            rgba(20, 41, 59, 0.95) 25%,
-            rgba(20, 41, 59, 0.75) 45%,
-            rgba(20, 41, 59, 0.35) 70%,
-            rgba(20, 41, 59, 0) 100%
-        ),
-        url("../public/images/safim23-2607s006©yohanbrandt-1.jpg");
-}
-
-.sur-titre {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.titre-principal {
-    width: 600px;
-    margin: 20px 0;
-    font-size: 42px;
-}
-
-.sous-titre {
-    width: 600px;
-    margin-bottom: 30px;
-    font-size: 20px;
+    background-color: #117bd1;
 }

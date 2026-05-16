@@ -1,18 +1,25 @@
 <?php
     $typeClient = $_POST['type-client'];
-    $nom        = $_POST['nom-client'];
-    $prenom     = $_POST['prenom-client'];
-    $email      = $_POST['email-client'];
-    $telephone  = $_POST['telephone-client'];
-    $adresse    = $_POST['adresse-client'];
-    $debutLoc   = $_POST['date-debut-reservation'];
-    $finLoc     = $_POST['date-fin-reservation'];
-    $message    = $_POST['message-reservation'];
+    $nom = $_POST['nom-client'];
+    $prenom = $_POST['prenom-client'];
+    $email = $_POST['email-client'];
+    $telephone = $_POST['telephone-client'];
+    $adresse = $_POST['adresse-client'];
+    $debutLoc = $_POST['date-debut-reservation'];
+    $finLoc = $_POST['date-fin-reservation'] ?? '';
+    $message = $_POST['message-reservation'] ?? '';
 
     if ($typeClient === 'professionnel') {
-        $nomEntreprise = $_POST['entreprise-client'];
-    } else if ($typeClient === 'particulier') {
-        $nomEntreprise = NULL;
+        $nomEntreprise = $_POST['entreprise-client'] ?? '';
+    } else {
+        $nomEntreprise = null;
+    }
+
+    $reservationJson = $_POST['stockage-espaces'] ?? '[]';
+    $reservations = json_decode($reservationJson, true);
+
+    if (!is_array($reservations)) {
+        $reservations = [];
     }
 ?>
 
@@ -67,15 +74,54 @@
 
                 <div class="recap-carte">
                     <h2>Récapitulatif de votre réservation</h2>
-                    <ul class="recap-liste">
-                        <li><strong>Type :</strong> <span><?php echo $typeClient; ?></span></li>
-                        <li><strong>Nom :</strong> <span><?php echo $nom; ?></span></li>
-                        <li><strong>Prénom :</strong> <span><?php echo $prenom; ?></span></li>
-                        <li><strong>Email :</strong> <span><?php echo $email; ?></span></li>
-                        <li><strong>Téléphone :</strong> <span><?php echo $telephone; ?></span></li>
-                        <li><strong>Adresse :</strong> <span><?php echo $adresse; ?></span></li>
-                        <li><strong>Message :</strong> <span class="message-texte"><?php echo $message; ?></span></li>
-                    </ul>
+
+                    <?php if (empty($reservations)) : ?>
+                        <p>Aucun espace sélectionné.</p>
+                    <?php else : ?>
+                        <?php foreach ($reservations as $reservation) : ?>
+                            <ul class="recap-liste recap-liste">
+                                <li>
+                                    <strong>Espace :</strong>
+                                    <span><?php echo $reservation['nomEspace'] ?? ''; ?></span>
+                                </li>
+
+                                <li>
+                                    <strong>Options :</strong>
+                                    <span>
+                                        <?php
+                                            $options = $reservation['options'] ?? [];
+                                            echo !empty($options)
+                                                ? implode(', ', $options)
+                                                : 'Aucune option';
+                                        ?>
+                                    </span>
+                                </li>
+
+                                <li>
+                                    <strong>Équipements :</strong>
+                                    <span>
+                                        <?php
+                                            $equipements = $reservation['equipements'] ?? [];
+
+                                            if (empty($equipements)) {
+                                                echo 'Aucun équipement';
+                                            } else {
+                                                $listeEquipements = [];
+
+                                                foreach ($equipements as $equipement) {
+                                                    $nomEquipement = $equipement['nomEquipement'] ?? '';
+                                                    $quantite = $equipement['quantite'] ?? 0;
+                                                    $listeEquipements[] = $nomEquipement . ' (' . $quantite . ')';
+                                                }
+
+                                                echo implode(', ', $listeEquipements);
+                                            }
+                                        ?>
+                                    </span>
+                                </li>
+                            </ul>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
 
 
