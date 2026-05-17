@@ -1,26 +1,118 @@
 <?php
-    $typeClient = $_POST['type-client'];
-    $nom = $_POST['nom-client'];
-    $prenom = $_POST['prenom-client'];
-    $email = $_POST['email-client'];
-    $telephone = $_POST['telephone-client'];
-    $adresse = $_POST['adresse-client'];
-    $debutLoc = $_POST['date-debut-reservation'];
-    $finLoc = $_POST['date-fin-reservation'] ?? '';
-    $message = $_POST['message-reservation'] ?? '';
-
+    // htmlspecialchars pour afficher les caractères spéciaux sans les interpréter comme du code HTML
+    $typeClient = htmlspecialchars($_POST['type-client'] ?? '');
+    $nom = htmlspecialchars($_POST['nom-client'] ?? '');
+    $prenom = htmlspecialchars($_POST['prenom-client'] ?? '');
+    $email = htmlspecialchars($_POST['email-client'] ?? '');
+    $telephone = htmlspecialchars($_POST['telephone-client'] ?? '');
+    $adresse = htmlspecialchars($_POST['adresse-client'] ?? '');
+    $message = htmlspecialchars($_POST['message-reservation'] ?? '');
+    $debutLoc = htmlspecialchars($_POST['date-debut-reservation'] ?? '');
+    $finLoc = htmlspecialchars($_POST['date-fin-reservation'] ?? '');
+    
+    // Gérer le champ "Entreprise" uniquement pour les clients professionnels
     if ($typeClient === 'professionnel') {
-        $nomEntreprise = $_POST['entreprise-client'] ?? '';
+        $nomEntreprise = htmlspecialchars($_POST['entreprise-client'] ?? '');
     } else {
         $nomEntreprise = null;
     }
 
-    $reservationJson = $_POST['stockage-espaces'] ?? '[]';
+    // Récupérer les données de réservation envoyées depuis le formulaire
+    $reservationJson = $_POST['stockage-configuration'] ?? '[]';
+    // Convertir la chaîne JSON en tableau associatif
     $reservations = json_decode($reservationJson, true);
+    
+    // Initialiser une variable pour stocker la commande client
+    $commandeClient = '';
 
+    // Vérifier si la conversion a réussi et que nous avons un tableau
     if (!is_array($reservations)) {
         $reservations = [];
+    } else {
+        // Parcourir chaque réservation pour construire la commande client
+        foreach ($reservations as &$reservation) {
+            $reservation['options'] = isset($reservation['options']) && is_array($reservation['options'])
+                ? $reservation['options']
+                : [];
+
+            $reservation['equipements'] = isset($reservation['equipements']) && is_array($reservation['equipements'])
+                ? $reservation['equipements']
+                : [];
+
+            $optionsTexte = !empty($reservation['options'])
+                ? implode(', ', $reservation['options'])
+                : 'aucune';
+
+            $listeEquipements = [];
+            foreach ($reservation['equipements'] as $equipement) {
+                $nomEquipement = $equipement['nom'] ?? '';
+                $quantiteEquipement = $equipement['quantite'] ?? 0;
+
+                if ($nomEquipement !== '') {
+                    $listeEquipements[] = $nomEquipement . '[' . $quantiteEquipement . ']';
+                }
+            }
+
+            $equipementsTexte = !empty($listeEquipements)
+                ? implode(', ', $listeEquipements)
+                : 'aucun';
+
+            $nomEspace = $reservation['nom'] ?? 'Espace inconnu';
+            $commandeClient .= $nomEspace
+                . '[options(' . $optionsTexte . '), equipement(' . $equipementsTexte . ')], ';
+        }
+    };
+    
+    // Chargement des variables d'environnement à partir du fichier .env
+    require_once __DIR__ . '/../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+    $dotenv->load();
+
+    // Établir la connexion à la base de données
+    try {
+        // Initialiser le DSN (Data Source Name) pour la connexion à la base de données
+        $dns = "mysql:host={$_ENV['hote']};port={$_ENV['port']};dbname={$_ENV['base_de_donnees']}";
+        // Options de connexion pour PDO
+        $options = [
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false, // Désactive la vérification du certificat SSL
+            PDO::MYSQL_ATTR_SSL_CA => true, // Active l'utilisation de SSL
+        ];
+
+        // L'utilisateur de la base de données
+        $utilisateur = $_ENV['utilisateur'];
+
+        // Mot de passe de la base de données (vide par défaut)
+        $motDePasse = $_ENV['mot_de_passe'];
+        
+        // Création de la connexion PDO
+        $connection = new PDO($dns, $utilisateur, $motDePasse, $options);
+
+    } catch (Exception $ex) {
+        // Affichage de l'erreur de connexion
+        echo "Erreur de connexion à la base de données : {$ex->getMessage()}";
     }
+
+    // Préparer la requête SQL pour insérer les données de réservation
+    $cmd = "INSERT INTO reservations (type_client, nom_client, prenom_client, nom_entreprise_client, email_client, tel_client, adresse_client, message_client, debut_loc, fin_loc, commande_client)
+            VALUES (:type_client, :nom_client, :prenom_client, :nom_entreprise_client, :email_client, :tel_client, :adresse_client, :message_client, :debut_loc, :fin_loc, :commande_client)";
+
+    // Préparer la requête d'insertion
+    $requete = $connection->prepare($cmd);
+
+    // Exécuter la requête d'insertion
+    $requete->execute([
+        ':type_client' => $typeClient,
+        ':nom_client' => $nom,
+        ':prenom_client' => $prenom,
+        ':nom_entreprise_client' => $nomEntreprise,
+        ':email_client' => $email,
+        ':tel_client' => $telephone,
+        ':adresse_client' => $adresse,
+        ':message_client' => $message,
+        ':debut_loc' => $debutLoc,
+        ':fin_loc' => $finLoc,
+        ':commande_client' => $commandeClient,
+    ]);
 ?>
 
 <!DOCTYPE html>
@@ -52,12 +144,12 @@
                 <div class="confirmation-entete">
                     <div class="icone-succes">✓</div>
                     <h1>Merci, <?php echo $prenom . ' ' . $nom; ?> !</h1>
-                    <p>Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.</p>
+                    <p>Votre réservation a bien été enregistrée. Nous vous répondrons dans les plus brefs délais.</p>
                     <div class="bordure-bas"></div>
                 </div>
 
                 <div class="recap-carte">
-                    <h2>Récapitulatif de votre message</h2>
+                    <h2>Récapitulatif de votre réservation</h2>
                     <ul class="recap-liste">
                         <li><strong>Type :</strong> <span><?php echo $typeClient; ?></span></li>
                         <li><strong>Nom :</strong> <span><?php echo $nom; ?></span></li>
@@ -82,7 +174,7 @@
                             <ul class="recap-liste recap-liste">
                                 <li>
                                     <strong>Espace :</strong>
-                                    <span><?php echo $reservation['nomEspace'] ?? ''; ?></span>
+                                    <span><?php echo $reservation['nom'] ?? ''; ?></span>
                                 </li>
 
                                 <li>
@@ -109,7 +201,7 @@
                                                 $listeEquipements = [];
 
                                                 foreach ($equipements as $equipement) {
-                                                    $nomEquipement = $equipement['nomEquipement'] ?? '';
+                                                    $nomEquipement = $equipement['nom'] ?? '';
                                                     $quantite = $equipement['quantite'] ?? 0;
                                                     $listeEquipements[] = $nomEquipement . ' (' . $quantite . ')';
                                                 }

@@ -1,17 +1,66 @@
 <?php
-    $typeClient = $_POST['type-client'];
-    $nom        = $_POST['nom-client'];
-    $prenom     = $_POST['prenom-client'];
-    $email      = $_POST['email-client'];
-    $telephone  = $_POST['telephone-client'];
-    $adresse    = $_POST['adresse-client'];
-    $message    = $_POST['message-contact'];
+    $typeClient = htmlspecialchars($_POST['type-client'] ?? '');
+    $nom        = htmlspecialchars($_POST['nom-client'] ?? '');
+    $prenom     = htmlspecialchars($_POST['prenom-client'] ?? '');
+    $email      = htmlspecialchars($_POST['email-client'] ?? '');
+    $telephone  = htmlspecialchars($_POST['telephone-client'] ?? '');
+    $adresse    = htmlspecialchars($_POST['adresse-client'] ?? '');
+    $message    = htmlspecialchars($_POST['message-contact'] ?? '');
+    $nomEntreprise = null;
 
     if ($typeClient === 'professionnel') {
-        $nomEntreprise = $_POST['entreprise-client'];
+        $nomEntreprise = htmlspecialchars($_POST['entreprise-client'] ?? '');
     } else if ($typeClient === 'particulier') {
         $nomEntreprise = NULL;
     }
+
+    // Chargement des variables d'environnement à partir du fichier .env
+    require_once __DIR__ . '/../vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+    $dotenv->load();
+
+    // Établir la connexion à la base de données
+    try {
+        // Initialiser le DSN (Data Source Name) pour la connexion à la base de données
+        $dns = "mysql:host={$_ENV['hote']};port={$_ENV['port']};dbname={$_ENV['base_de_donnees']}";
+        // Options de connexion pour PDO
+        $options = [
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false, // Désactive la vérification du certificat SSL
+            PDO::MYSQL_ATTR_SSL_CA => true, // Active l'utilisation de SSL
+        ];
+
+        // L'utilisateur de la base de données
+        $utilisateur = $_ENV['utilisateur'];
+
+        // Mot de passe de la base de données (vide par défaut)
+        $motDePasse = $_ENV['mot_de_passe'];
+        
+        // Création de la connexion PDO
+        $connection = new PDO($dns, $utilisateur, $motDePasse, $options);
+
+    } catch (Exception $ex) {
+        // Affichage de l'erreur de connexion
+        echo "Erreur de connexion à la base de données : {$ex->getMessage()}";
+    }
+
+    // Préparer la requête SQL pour insérer les données du contact
+    $cmd = "INSERT INTO messages (type_client, nom_client, prenom_client, nom_entreprise_client, email_client, tel_client, adresse_client, message_client) 
+    VALUES (:type_client, :nom_client, :prenom_client, :nom_entreprise_client, :email_client, :tel_client, :adresse_client, :message_client)";
+
+    // Préparer la requête d'insertion
+    $requete = $connection->prepare($cmd);
+
+    // Exécuter la requête d'insertion
+    $requete->execute([
+        ':type_client' => $typeClient,
+        ':nom_client' => $nom,
+        ':prenom_client' => $prenom,
+        ':nom_entreprise_client' => $nomEntreprise,
+        ':email_client' => $email,
+        ':tel_client' => $telephone,
+        ':adresse_client' => $adresse,
+        ':message_client' => $message,
+    ]);
 ?>
 
 <!DOCTYPE html>
