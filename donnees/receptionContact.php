@@ -83,7 +83,7 @@
                 <li><a class="menu_link" href="../index.html">ACCUEIL</a><div class="underline"></div></li>
                 <li><a class="menu_link" href="../pages/espaces.html">NOS ESPACES</a><div class="underline"></div></li>
                 <li><a class="menu_link" href="../pages/reservation.html">RÉSERVATION</a><div class="underline"></div></li>
-                <li class="selected"><a class="menu_link" href="../pages/contact.html">CONTACT</a><div class="underline"></div></li>
+                <li><a class="menu_link" href="../pages/contact.html">CONTACT</a><div class="underline"></div></li>
             </ul>
         </nav>
 
