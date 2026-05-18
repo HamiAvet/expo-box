@@ -74,43 +74,43 @@
             <div class="ligne-formulaire grille-deux-colonnes">
               <div class="groupe-champ">
                 <label for="nom-client">Nom</label>
-                <input type="text" id="nom-client" name="nom-client" placeholder="Ducoin" required>
+                <input type="text" id="nom-client" name="nom-client" placeholder="Ducoin" maxlength="50" required>
               </div>
               <div class="groupe-champ">
                 <label for="prenom-client">Prenom</label>
-                <input type="text" id="prenom-client" name="prenom-client" placeholder="Jean-Yves" required>
+                <input type="text" id="prenom-client" name="prenom-client" placeholder="Jean-Yves" maxlength="50" required>
               </div>
             </div>
 
             <div id="ligne-entreprise-client" class="ligne-formulaire grille-une-colonne">
               <div class="groupe-champ">
                 <label for="entreprise-client">Nom d'entreprise</label>
-                <input type="text" id="entreprise-client" name="entreprise-client" placeholder="Nom de l'entreprise">
+                <input type="text" id="entreprise-client" name="entreprise-client" placeholder="Nom de l'entreprise" maxlength="100">
               </div>
             </div>
 
             <div class="ligne-formulaire grille-deux-colonnes">
               <div class="groupe-champ">
                 <label for="email-client">Email</label>
-                <input type="email" id="email-client" name="email-client" placeholder="exemple@domaine.com" required>
+                <input type="email" id="email-client" name="email-client" placeholder="exemple@domaine.com" maxlength="100" required>
               </div>
               <div class="groupe-champ">
                 <label for="telephone-client">Numero de telephone</label>
-                <input type="tel" id="telephone-client" name="telephone-client" placeholder="06 12 34 56 78" required>
+                <input type="tel" id="telephone-client" name="telephone-client" placeholder="06 12 34 56 78" maxlength="15" required>
               </div>
             </div>
 
             <div class="ligne-formulaire grille-une-colonne">
               <div class="groupe-champ">
                 <label for="adresse-client">Adresse</label>
-                <input type="text" id="adresse-client" name="adresse-client" placeholder="123 Rue Exemple, 75000 Paris" required>
+                <input type="text" id="adresse-client" name="adresse-client" placeholder="123 Rue Exemple, 75000 Paris" maxlength="255" required>
               </div>
             </div>
 
             <div class="ligne-formulaire grille-une-colonne">
               <div class="groupe-champ">
                 <label for="message-contact">Message</label>
-                <textarea id="message-contact" name="message-contact" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions." required></textarea>
+                <textarea id="message-contact" name="message-contact" rows="5" placeholder="Precisez ici vos besoins, contraintes ou questions." maxlength="1000" required></textarea>
               </div>
             </div>
 
